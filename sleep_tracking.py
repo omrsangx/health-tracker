@@ -125,6 +125,6 @@ def wakeup_func():
     html_form_submitted = "landing_page.html"
     return render_template(html_form_submitted) 
 
-# if __name__ == "__main__":
-#     app.run(host="0.0.0.0", port=9090, debug=True)
+if __name__ == "__main__":
+    app.run()
 
