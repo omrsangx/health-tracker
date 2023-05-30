@@ -105,4 +105,10 @@ class sleep_db_class:
         self.db_cursor.execute(f"SELECT sleep_quality FROM {str(self.table_name)} ORDER BY rowid DESC LIMIT 1")
         self.items = self.db_cursor.fetchall()
         self.close_db_connection()
-        return self.items        
+        if not self.items:
+            self.items = "Empty"
+            print(self.items)
+            return self.items
+        else:
+            return self.items
+
