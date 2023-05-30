@@ -107,7 +107,6 @@ class sleep_db_class:
         self.close_db_connection()
         if not self.items:
             self.items = "Empty"
-            print(self.items)
             return self.items
         else:
             return self.items
