@@ -11,11 +11,16 @@ chartData.map(chartDataElement => chartDataSum += chartDataElement);
 document.getElementById('idQuantity').innerHTML = (chartData[chartData.length - 1]).toFixed(2);
 document.getElementById('idQuality').innerHTML = sleepQuality;
 document.getElementById('idWeekAverageHours').innerHTML = ( chartDataSum / chartData.length ).toFixed(2);
-document.getElementById('idScore').innerHTML = 70;
 
-// console.log("chartData Length: ", chartData.length);
-// console.log("ChartMax: ", Math.max(...chartData));
-// console.log(chartDataSum);
+if ( sleepQuality == "Bad") {
+  document.getElementById('idScore').innerHTML = 50;
+} else if ( sleepQuality == "Good") {
+  document.getElementById('idScore').innerHTML = 75;
+} else if ( sleepQuality == "Deep") {
+  document.getElementById('idScore').innerHTML = 90;
+} else {
+  document.getElementById('idScore').innerHTML = "Not provided";
+}
 
 const ctx = document.getElementById('myChart').getContext('2d');
 const chart = new Chart(ctx, {
